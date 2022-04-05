@@ -1,0 +1,58 @@
+<div class="password-error" *ngIf="errorMessage" style="padding:10px;text-align:center;width:100%">{{errorMessage}}</div>
+<div class="primary-success" *ngIf="successfullUpdate" style="padding:10px;text-align:center;width:100%">{{'USERPAGE.REGISTEREDSUCCESSFULLY' | translate}}</div>
+<div >
+  <h1>{{ 'LEADSPAGE.LEADSHEADING' | translate }}</h1>
+  <form [formGroup]="userDetailsForm" autocomplete="off" (ngSubmit)="submit()">
+    <div fxLayout="row" fxLayoutGap="20px">
+      <div  fxFlex="50" >
+        <mat-form-field appearance="outline">
+          <mat-label>{{'USERPAGE.COMPANYNAME' | translate}}</mat-label>
+          <input formControlName='companyname'  matInput placeholder="{{'USERPAGE.COMPANYNAME' | translate}}" [class.is-invalid]="isControlValid('companyname')" [class.is-valid]="isControlValid('companyname')">
+          <mat-error  *ngIf="controlHasError('required', 'companyname')" >
+            {{ 'USERPAGE.COMPANYNAMEERROR' |  translate}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div  fxFlex="50">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'USERPAGE.COMPANYPHONE' | translate}} </mat-label>
+          <input formControlName="companyphone" matInput placeholder="{{'USERPAGE.COMPANYPHONE' | translate}}" type="number" [class.is-invalid]="isControlValid('companyphone')">
+          <mat-error *ngIf="controlHasError('pattern', 'companyphone')">
+            {{ 'USERPAGE.VALID10DIGITNUMBER' |  translate}}
+          </mat-error>
+          <mat-error  *ngIf="controlHasError('required', 'companyphone')" >
+            {{ 'USERPAGE.COMPANYPHONEERROR' |  translate}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutGap="20px">
+      <div  fxFlex="50">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'USERPAGE.REPRESENTATIVENAME' | translate}} </mat-label>
+          <input formControlName="representativename" matInput placeholder="{{'USERPAGE.REPRESENTATIVENAME' | translate}}" type="text" [class.is-invalid]="isControlValid('representativename')">
+          <mat-error  *ngIf="controlHasError('required', 'representativename')" >
+            {{ 'USERPAGE.REPRESENTATIVENAME' |  translate}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div  fxFlex="50">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'USERPAGE.REPRESENTATIVEPHONE' | translate}} </mat-label>
+          <input formControlName="representativephone" matInput placeholder="{{'USERPAGE.REPRESENTATIVEPHONE' | translate}}" type="number" [class.is-invalid]="isControlValid('representativephone')">
+          <mat-error  *ngIf="controlHasError('required', 'representativephone')" >
+            {{ 'USERPAGE.REPRESENTATIVEPHONE' |  translate}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutGap="20px">
+      <div fxFlexOffset="60" fxFlex="40" fxLayoutAlign="end">
+        <img *ngIf="loading" src="../../../../assets/images/spiner.gif" height="25" [style]="'margin:10px'">
+        <button [disabled]="userDetailsForm.invalid" class="w-100" mat-raised-button color="accent" >{{btnMessage | translate}}</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+

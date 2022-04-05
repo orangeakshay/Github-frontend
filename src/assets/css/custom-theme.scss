@@ -1,0 +1,98 @@
+@import '../../../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~@angular/material/theming';
+@include mat-core();
+
+
+$mat-black: (
+  50: #ffebee,
+  100: #ffcdd2,
+  200: #ef9a9a,
+  300: #e57373,
+  400: #ef5350,
+  500: #f44336,
+  600: #e53935,
+  700: #d32f2f,
+  800: #212121,
+  900: #000000,
+  A100: #ff8a80,
+  A200: #ff5252,
+  A400: #ff1744,
+  A700: #d50000,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+$primary: mat-palette($mat-black,800);
+$accent: mat-palette($mat-red,900);
+
+$theme: mat-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+
+mat-toolbar{
+  .navbar-links{
+    color:white;
+    font-size: 0.8rem;
+    margin-right:16px;
+    display:inline-block;
+    text-align: center;
+    padding: 6px;
+    line-height: 16px;
+    span {
+      display: block;
+      max-width: 70px;
+      white-space: pre-wrap;
+    }
+    i{
+      font-size:1.2rem;
+    }
+  }
+  .navbar-links:hover{
+    background: transparent;
+    color:white;
+    cursor:pointer;
+    border-radius: 6px;
+  }
+  .hovered-links:hover{
+    background: mat-color($mat-green, 900);
+  }
+  .active{
+    background: mat-color($mat-green, 900);
+    color:white;
+    box-shadow: 3px 3px 4px -2px #ccc;
+    border-radius: 4px;
+  }
+}
+.member-table,.message-section{
+  thead {
+    background: mat-color($mat-green, 900);
+  }
+}
+
+.message-section{
+  background: mat-color($mat-green, 900);
+}
+
+.word-search-section{
+  span{
+    color: mat-color($mat-green, 900);
+  }
+}
+
+.mat-card{
+  background-color: mat-color($mat-red, 900);
+}

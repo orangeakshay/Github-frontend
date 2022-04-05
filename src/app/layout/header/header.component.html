@@ -1,0 +1,15 @@
+<!--<mat-toolbar color="primary" class="navbar">
+  <mat-toolbar-row>
+      <ng-container *ngIf="filteredMenus">
+        <div  *ngFor="let menu of menus"class="navbar-links" [routerLink]="menu.isNotDisabled ? menu.path : null"
+              [routerLinkActive]="menu.isNotDisabled ? 'active' : 'is_disabled'" [ngClass]="{'hovered-links':menu.isNotDisabled}" [ngStyle]="menu.isNotDisabled?{'color': 'white'} : {'cursor': 'not-allowed'}" mat-button   ><i  [ngClass]="menu.icon" [ngStyle]="menu.isNotDisabled?{'color': 'white','':''} : {'color': 'grey'}"    ></i><span [ngStyle]="menu.isNotDisabled?{'color': 'white'} : {'color': 'grey'}">{{menu.translateKey | translate}}</span></div>
+        <div class="online-members" mat-button><div><a>{{ "MENU.ONLINEMEMBERS" | translate}}</a><div class="circle">2  </div></div></div>
+       <div class="logout-icon right-navbar" >
+         <div  mat-button  class="user-profile-icon"   routerLink="/dashboard/dynamic-contents/profile/"  ><i  class="fas fa-user" ></i><span>{{currentUser?.companyname}}</span></div>
+         <div  mat-button (click)="logout()"   routerLink="/dashboard/dynamic-contents/profile/"  ><i  class="fas fa-sign-out-alt" ></i><span>Logout</span></div>
+         <div><app-language-selector></app-language-selector></div>
+       </div>
+      </ng-container>
+  </mat-toolbar-row>
+</mat-toolbar>-->
+

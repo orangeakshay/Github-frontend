@@ -1,0 +1,67 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+    <mat-icon class="close-icon" color="warn">close</mat-icon>
+</button>
+<div mat-dialog-content style="margin-top:20px">
+    <div class="Wrapper">
+        <div class="Input">
+            <label for="input" class="Input-label">Repository Name:</label>
+            <input type="text" id="input" class="Input-text" value="{{data.response[0]['RepositoryName']}}" disabled>
+        </div>
+    </div>
+    <div class="Wrapper">
+        <div class="Input">
+            <label for="input" class="Input-label">Repository Size</label>
+            <input type="text" id="input" class="Input-text" value="{{data.response[0]['RepositorySize']}}" disabled>
+        </div>
+    </div>
+    <div class="Wrapper">
+        <div class="Input">
+            <label for="input" class="Input-label">Repository Owner</label>
+            <input type="text" id="input" class="Input-text" value="{{data.response[0]['RepositoryOwner']}}" disabled>
+        </div>
+    </div>
+    <div class="Wrapper">
+        <div class="Input">
+            <label for="input" class="Input-label">Repository Owner</label>
+            <input type="text" id="input" class="Input-text" value="{{data.response[0]['RepositoryPrivate']}}" disabled>
+        </div>
+    </div>
+    <div class="Wrapper">
+        <div class="Input">
+            <label for="input" class="Input-label">Number Of File On Root Level</label>
+            <input type="text" id="input" class="Input-text" value="{{data.response[0]['NumberOfFileOnRootLevel']}}" disabled>
+        </div>
+    </div>
+    <div class="Wrapper">
+        <div class="Input">
+            <label for="input" class="Input-label">Have YML File</label>
+            <input type="text" id="input" class="Input-text" value="{{data.response[0]['HaveYMLFile']}}" disabled>
+        </div>
+    </div>
+    <div class="Wrapper">
+        <div class="Input">
+            <label for="input" class="Input-label">Content Of YML File</label>
+            <input type="text" id="input" class="Input-text" value="{{data.response[0]['ContentOfYMLFile']}}" disabled>
+        </div>
+    </div>
+    <div class="Wrapper" *ngIf="data.response[0]['ActiveWebhooks'] && data.response[0]['ActiveWebhooks']['message']">
+        <div class="Input">
+            <label for="input" class="Input-label">ActiveWebhooks</label>
+            <input type="text" id="input" class="Input-text" value="{{data.response[0]['ActiveWebhooks']['message']}}" disabled>
+        </div>
+    </div>
+</div>
+
+<!--
+"RepositoryName":"REPO-A",
+"RepositorySize":0,
+"RepositoryOwner":"orangeakshay",
+"RepositoryPrivate":true,
+"NumberOfFileOnRootLevel":1,
+"NumberOfFoldersOnRootLevel":0,
+"HaveYMLFile":false,
+"ContentOfYMLFile":"",
+"ActiveWebhooks":{
+"message":"NO ACTIVE WEBHOOKS"
+}
+-->
